@@ -78,12 +78,12 @@ label,
 
 #api label {
     display: inline-block;
-    width: 100px;
+    width: 150px;
+    text-align: left;
 }
 
 #api input {
-    border-top-left-radius:5px;
-    border-bottom-right-radius : 10px;
+    
 }
 
 #api[data-name='IdpSelections'] ul {
