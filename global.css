@@ -76,6 +76,13 @@ label,
   padding-left: 0;
 }
 
+#api label {
+    display: inline-block;
+    width: 100px;
+}
+
+
+
 #api[data-name='IdpSelections'] ul {
   text-align: center;
 }
