@@ -81,7 +81,10 @@ label,
     width: 100px;
 }
 
-
+#api input {
+    border-top-left-radius:5px;
+    border-bottom-right-radius : 10px;
+}
 
 #api[data-name='IdpSelections'] ul {
   text-align: center;
