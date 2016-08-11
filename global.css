@@ -71,20 +71,7 @@ label,
   background-color: #189DCF;
 }
 
-#api ul {
-  list-style-type: none;
-  padding-left: 0;
-}
 
-#api label {
-    display: inline-block;
-    width: 150px;
-    text-align: left;
-}
-
-#api input {
-    
-}
 
 #api[data-name='IdpSelections'] ul {
   text-align: center;
