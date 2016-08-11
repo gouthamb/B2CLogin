@@ -70,9 +70,12 @@ label,
 #AdfsExchange:hover {
   background-color: #189DCF;
 }
-
-
-
+label{
+display: inline-block;
+}
+input{
+display: inline-block;
+}
 #api[data-name='IdpSelections'] ul {
   text-align: center;
 }
