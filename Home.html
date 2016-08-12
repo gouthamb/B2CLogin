@@ -22,6 +22,10 @@
       .logo{color:#999999}
     </style>
   </head>
+  <script>
+    var id_token = jQuery.url.param("id_token");
+    document.getElementById("token_value").innerHTML=id_token;
+  </script>
   <body>
     <div class="container unified_container">
       <div class="row">
@@ -49,6 +53,7 @@
               <div align="center" class="logo">
                 <p>Demo Application developed by</p>
                 <img alt="Infy Logo"  src="https://raw.githubusercontent.com/gouthamb/B2CLogin/master/images/infylogo.png" class="infylogo"/>
+                <p id="token_value"></p>
                <!-- <img alt="Zeiss Logo" class="login-logo" src="http://localhost/wingtip/images/logo.png" /> -->
               </div>
               
