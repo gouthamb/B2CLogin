@@ -23,8 +23,10 @@
     </style>
   </head>
   <script>
-    var id_token = jQuery.url.param("id_token");
-    document.getElementById("token_value").innerHTML=id_token;
+   
+var url=window.location.href;
+var token=url.split("id_token");
+document.getElementById("token_value").innerHTML=token(1);
   </script>
   <body>
     <div class="container unified_container">
