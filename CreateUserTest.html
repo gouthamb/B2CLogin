@@ -50,6 +50,12 @@
       .zeisslogo{height: 100px;}
       .infylogo{height: 55px;}
       .logo{color:#999999 height: 155px;}
+      .wrapper {
+	min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
       .Registration_Form{padding-left:30px; float: right}
      /* .password-label label{display: table;width:auto;}
       
@@ -63,17 +69,17 @@
     </style>
   </head>
   <body>
-    <div class="container_unified_container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-          <div class="panel panel-default">
+
+
+
+
             <div class="panel-body">
               <div align="center" class="logo">
                 <img alt="Zeiss Logo"  src="https://raw.githubusercontent.com/gouthamb/B2CLogin/master/images/zeisslogo.png" class="zeisslogo"/>
                <!-- <img alt="Zeiss Logo" class="login-logo" src="http://localhost/wingtip/images/logo.png" /> -->
               </div>
               
-			  
+			  <div class="wrapper">
 			  <h3 align="center">Enter the details to Register the User</h3>
 			  <div class="right_content">
 			  	
@@ -120,7 +126,7 @@
 				</div>
 				</form>
 			  </div>
-              
+              </div>
               
               <br/>
               <br/>
@@ -130,9 +136,7 @@
                <!-- <img alt="Zeiss Logo" class="login-logo" src="http://localhost/wingtip/images/logo.png" /> -->
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
   </body>
 </html>
