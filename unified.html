@@ -8,6 +8,53 @@
     <!-- TODO: favicon -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/global.css" rel="stylesheet" type="text/css" />
+    <script>>
+  function getToken()
+  {
+    var url = window.location.href;
+    name = "id_token";
+    url=url.replace("#","?");
+    var regex = new RegExp("[#&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    var token= decodeURIComponent(results[2].replace(/\+/g, " "));
+    document.getElementById("token").innerHTML=token;
+  }
+  function getUserName(token) {
+    var segments = token.split('.');
+
+    if (segments.length !== 3) {
+      throw new Error('Not enough or too many segments');
+    }
+
+    // All segment should be base64
+    var headerSeg = segments[0];
+    var payloadSeg = segments[1];
+    var signatureSeg = segments[2];
+
+    // base64 decode and parse JSON
+    var header = JSON.parse(base64urlDecode(headerSeg));
+    var payload = JSON.parse(base64urlDecode(payloadSeg));
+
+    return {
+      header: header,
+      payload: payload,
+      signature: signatureSeg
+    }
+
+  }
+}
+
+function base64urlDecode(str) {
+  return new Buffer(base64urlUnescape(str), 'base64').toString();
+};
+
+function base64urlUnescape(str) {
+  str += Array(5 - str.length % 4).join('=');
+  return str.replace(/\-/g, '+').replace(/_/g, '/');
+}
+    </script>
   </head>
   <body>
     <div class="container unified_container">
@@ -20,7 +67,7 @@
                 <img alt="Zeiss Logo" class="login-logo" src="http://localhost/wingtip/images/logo.png" />
               </div>
               
-              
+              <p id="token"></p>
               <div id="api" align="middle" data-name="Unified">
               </div>
             </div>
