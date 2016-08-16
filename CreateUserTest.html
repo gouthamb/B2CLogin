@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register User</title>
+	<script type="text/javascript">
+		function validate_form ( )
+		{
+			if ( document.emp.emp_name.value == "" )
+			{
+				alert ( "Please fill in the 'Your Employee Name' box." );
+				return false;
+			}
+			if ( document.emp.num.value == "" )
+			{
+				alert ( "Enter Employee Number" );
+				return false;
+			}
+		alert("sucessfully Submitted");
+		return true;
+		}
+		if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(document.emp.email_id.value))  
+		{  
+			alert("You have entered an invalid email address!")  
+			return (false)   
+		}           
+		function isNumberKey(evt)
+		{
+			var charCode = (evt.which) ? evt.which : event.keyCode;
+			if (charCode != 46 && charCode > 31 
+				&& (charCode < 48 || charCode > 57))
+				{alert("Enter Number");             
+				return false;
+				}
+			return true;
+		} 
+	</script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TODO: favicon > -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/global.css" rel="stylesheet" type="text/css" />
+    <style>
+      label{display: inline-block; width:200px;}
+      input{display: inline-block; width:300px;border: solid 1px #dcdcdc}
+      input.focus,input:focus{border: solid 1px cccccc;box-shadow: 0 0 5px 1px #cccccc;}
+      .password-label label{display: table;width:auto;}
+      .Registration_Form{padding: 0px 150px;}
+      .input_label{text-align: right}
+      .entry-item{padding-top:10px}
+      .intro{text-align:center;padding: 0px 20px}
+      .divider,.create,.buttons{ text-align:center;}
+      .zeiss_title{color: #0000cc;text-align:center}
+      .buttons,.password-label{padding-top: 10px}
+      .zeisslogo{height: 100px;}
+      .infylogo{height: 55px;}
+      .logo{color:#999999}
+    </style>
+  </head>
+  <body>
+    <div class="container_unified_container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div align="center" class="logo">
+                <img alt="Zeiss Logo"  src="https://raw.githubusercontent.com/gouthamb/B2CLogin/master/images/zeisslogo.png" class="zeisslogo"/>
+               <!-- <img alt="Zeiss Logo" class="login-logo" src="http://localhost/wingtip/images/logo.png" /> -->
+              </div>
+              
+			  
+			  <h3 align="center">Enter the details to Register the User</h3>
+			  <div class="Registration_Form">
+				<form name="emp" action="servlet/Register" onsubmit="return validate_form();" method="post">
+				<div class="entry-item">
+                    <div class="input-label">
+						<label for="firstName">First Name</label>
+					</div>
+					<input type="text" value="" id="firstName" name="firstName" size="24" tabindex="1" required>
+                </div>
+				
+				<div class="entry-item">
+                    <div class="input-label">
+						<label for="lastName">Last Name</label>
+					</div>
+					<input type="text" value="" id="lastName" name="lastName" size="24" tabindex="1" required>
+                </div>
+				
+				<div class="entry-item">
+                    <div class="input-label">
+						<label for="emailId">Email</label>
+					</div>
+					<input type="text" value="" id="emailId" name="emailId" size="24" tabindex="1" required>
+                </div>
+				
+ 				<div class="entry-item">
+                    <div class="input-label">
+						<label for="emailId">User ID</label>
+					</div>
+					<input type="text" value="" id="userId" name="userId" size="24" tabindex="1" required>
+                </div> 
+				
+				<div class="entry-item">
+                    <div class="input-label">
+						<label for="password">Password</label>
+					</div>
+					<input type="password" value="" id="password" name="password" size="24" tabindex="1" required>
+                </div>
+			  
+				<div class="buttons"> 
+					<button id="next" tabindex="1">Sign in</button> 
+				</div>
+				</form>
+			  </div>
+              
+              
+              <br/>
+              <br/>
+              <div align="center" class="logo">
+                <p>User Registration Demo Application developed by</p>
+                <img alt="Infy Logo"  src="https://raw.githubusercontent.com/gouthamb/B2CLogin/master/images/infylogo.png" class="infylogo"/>
+               <!-- <img alt="Zeiss Logo" class="login-logo" src="http://localhost/wingtip/images/logo.png" /> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
