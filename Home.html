@@ -23,6 +23,26 @@
     </style>
   </head>
   <script>
+function myFunction() {
+var url = "https://zeissuserlogin.azurewebsites.net/unified.html#id_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IklkVG9rZW5TaWduaW5nS2V5Q29udGFpbmVyLnYyIn0.eyJleHAiOjE0NzEzNDQ3MjUsIm5iZiI6MTQ3MTM0MTEyNSwidmVyIjoiMS4wIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5taWNyb3NvZnRvbmxpbmUuY29tL3RmcC80Y2YzNjAzNC03ODc4LTQ4MjMtODZiMC05ZjI5Y2M0ZDlkMzEvYjJjXzFfemVpc3NfZGVtb19wb2xpY3kvdjIuMC8iLCJzdWIiOiJOb3Qgc3VwcG9ydGVkIGN1cnJlbnRseS4gVXNlIG9pZCBjbGFpbS4iLCJhdWQiOiJhMDZlMDMxMi02N2M3LTRiZTMtYTBmMS1kOWIxMWUwZjk1ZDMiLCJhY3IiOiJiMmNfMV96ZWlzc19kZW1vX3BvbGljeSIsIm5vbmNlIjoiZGVmYXVsdE5vbmNlIiwiaWF0IjoxNDcxMzQxMTI1LCJhdXRoX3RpbWUiOjE0NzEzNDExMjUsImdpdmVuX25hbWUiOiJaZWlzc19UZXN0VXNlcl8wMDEiLCJmYW1pbHlfbmFtZSI6IlplaXNzX1Rlc3RVc2VyXzAwMSIsIm5hbWUiOiJaZWlzc19UZXN0VXNlcl8wMDFAZGVtby5jb20iLCJlbWFpbHMiOlsiWmVpc3NfVGVzdFVzZXJfMDAxQGRlbW8uY29tIl0sInRmcCI6IkIyQ18xX1plaXNzX0RlbW9fUG9saWN5In0.UGMEu3NuJh7eWLBbUQCBm--19AS-zHmY5LZn-hVaKEk9aMfEPyMpEvIhhnEWc7_qMrdoubtBwt6cLOFXXVs3ISpSxSPfuzhv0ZDK9LnIcaI1nPx1j8_Wqtc8nYob3GzU2KMi-_EsSuj6J3Xjzi9z5EVhiVxjoLxmzlAPp1Atydq1xrtygVblM0cXFrdWmwKU_G4z8mMTEcqI1z87EaO_QNJPDmh5I4TGGAznAd4VboiuRqBhEXfpWlTe5RdqHo2I3H8mCy4nTBoxYLK9jj8SL4Ph2VKLHR0jWMOhnPTKN3cVyzp7XxS07OrloksIhuN-5j3WKVabN-wiikKznQIPbg";
+url = url.replace("https://zeissuserlogin.azurewebsites.net/unified.html#id_token=", ''); 
+//alert(url);
+var token=url.split('.');
+token[0]=window.atob(token[0]);
+//alert(token[0]);
+token[1]=window.atob(token[1]);
+//alert(token[1]);
+var name=token[1].substring(token[1].indexOf("given_name"),token[1].indexOf(",\"family_name"));
+name=name.replace("given_name\":\"","");
+name=name.replace("\"","");
+//alert(name);
+document.getElementById("welcome_note").innerHTML=name;
+
+
+
+
+}
+</script>
    
 var url=window.location.href;
 var token=url.split("id_token");
@@ -43,7 +63,7 @@ document.getElementById("token_value").innerHTML=token(1);
               <br/>
               <br/>
               <div align="center">
-              <h2 class="Welcome">Hi User</h2>
+              <h2 class="Welcome" id="welcome_note">Hi User</h2>
               <h4 class="Welcome">You have successfully logged into the Zeiss Demo Application.</h4>
               </div>
               <br/>
