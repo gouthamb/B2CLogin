@@ -25,7 +25,7 @@
 <script>
       function getUserName() {
       var url =window.location.href;
-      url = url.replace("https://zeissuserlogin.azurewebsites.net/unified.html#id_token=", ''); 
+      url = url.replace("http://zeissuserlogin.azurewebsites.net/unified.html#id_token=", ''); 
       alert(url);
       var token=url.split('.');
       token[0]=window.atob(token[0]);
