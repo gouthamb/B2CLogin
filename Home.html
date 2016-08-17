@@ -22,33 +22,26 @@
       .logo{color:#999999}
     </style>
   </head>
-  <script>
-function myFunction() {
-var url =window.location.href;
-url = url.replace("https://zeissuserlogin.azurewebsites.net/unified.html#id_token=", ''); 
-//alert(url);
-var token=url.split('.');
-token[0]=window.atob(token[0]);
-//alert(token[0]);
-token[1]=window.atob(token[1]);
-//alert(token[1]);
-var name=token[1].substring(token[1].indexOf("given_name"),token[1].indexOf(",\"family_name"));
-name=name.replace("given_name\":\"","");
-name=name.replace("\"","");
-//alert(name);
-document.getElementById("welcome_note").innerHTML="Hi "+name+"!";
-
-
-
-
-}
-</script>
+<script>
+      function getUserName() {
+      var url =window.location.href;
+      url = url.replace("https://zeissuserlogin.azurewebsites.net/unified.html#id_token=", ''); 
+      //alert(url);
+      var token=url.split('.');
+      token[0]=window.atob(token[0]);
+      //alert(token[0]);
+      token[1]=window.atob(token[1]);
+      //alert(token[1]);
+      var name=token[1].substring(token[1].indexOf("given_name"),token[1].indexOf(",\"family_name"));
+      name=name.replace("given_name\":\"","");
+      name=name.replace("\"","");
+      //alert(name);
+      document.getElementById("welcome_note").innerHTML="Hi "+name+"!";
+      }
+    </script>
+  <body onload="getUserName()">
+    
    
-var url=window.location.href;
-var token=url.split("id_token");
-document.getElementById("token_value").innerHTML=token(1);
-  </script>
-  <body>
     <div class="container unified_container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
