@@ -26,16 +26,16 @@
       function getUserName() {
       var url =window.location.href;
       url = url.replace("https://zeissuserlogin.azurewebsites.net/Home.html#id_token=", ""); 
-      alert(url);
+      //alert(url);
       var token=url.split('.');
       token[0]=window.atob(token[0]);
-      alert(token[0]);
+      //alert(token[0]);
       token[1]=window.atob(token[1]);
-      alert(token[1]);
+     // alert(token[1]);
       var name=token[1].substring(token[1].indexOf("given_name"),token[1].indexOf(",\"family_name"));
       name=name.replace("given_name\":\"","");
       name=name.replace("\"","");
-      alert(name);
+      //alert(name);
       document.getElementById("welcome_note").innerHTML="Hi "+name+"!";
       }
     </script>
