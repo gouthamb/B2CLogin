@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sign in</title>
+<head>
+    <title>Dashboard</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,19 +9,38 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/global.css" rel="stylesheet" type="text/css" />
     <style>
-     label{display: inline-block; width:200px;}
-      input{display: inline-block; width:300px;}
-      .password-label label{width:auto;}
-      .entry{padding: 0px 175px;}
-      .intro{text-align:center;padding: 0px 20px}
-      .divider,.create,.buttons{ text-align:center;}
-      .zeiss_title{color: #0000cc;text-align:center}
-      .buttons,.password-label{padding-top: 10px}
-      .zeisslogo{height: 100px;}
-      .infylogo{height: 55px;}
-      .logo{color:#999999}
+        .zeisslogo {
+            height: 100px;
+            padding-left: 10px;
+        }
+
+        .infylogo {
+            height: 45px;
+        }
+
+        .logo {
+            color: #999999;
+        }
+
+        .float-right {
+            float: right;
+            margin-top: -60px;
+        }
+
+        .container {
+            padding: 10px 10px 10px 10px;
+        }
+
+        .footer {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+            text-align: center;
+        }
     </style>
-  </head>
+</head>
 <script>
       function getUserName() {
       var url =window.location.href;
@@ -36,46 +55,51 @@
       name=name.replace("given_name\":\"","");
       name=name.replace("\"","");
       //alert(name);
-      document.getElementById("welcome_note").innerHTML="Hi "+name+"!";
+      document.getElementById("topspan").innerHTML="Global Corporate Site | Welcome,  "+name+"";
       }
     </script>
-  <body onload="getUserName()">
-    
-   
-    <div class="container unified_container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <div align="center" class="logo">
-                <img alt="Zeiss Logo"  src="https://raw.githubusercontent.com/gouthamb/B2CLogin/master/images/zeisslogo.png" class="zeisslogo"/>
-               <!-- <img alt="Zeiss Logo" class="login-logo" src="http://localhost/wingtip/images/logo.png" /> -->
-              </div>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <div align="center">
-              <h2 class="Welcome" id="welcome_note">Hi User</h2>
-              <h4 class="Welcome">You have successfully logged into the Zeiss Demo Application.</h4>
-              </div>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <div align="center" class="logo">
-                <p>Demo Application developed by</p>
-                <img alt="Infy Logo"  src="https://raw.githubusercontent.com/gouthamb/B2CLogin/master/images/infylogo.png" class="infylogo"/>
-                <p id="token_value"></p>
-               <!-- <img alt="Zeiss Logo" class="login-logo" src="http://localhost/wingtip/images/logo.png" /> -->
-              </div>
-              
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="logo">
+                <img alt="Zeiss Logo" src="https://raw.githubusercontent.com/gouthamb/B2CLogin/master/images/zeisslogo.png" class="zeisslogo" />
+                <br />
+                <span id="topspan">Global Corporate Site | Login</span>
+                <!-- <img alt="Zeiss Logo" class="login-logo" src="http://localhost/wingtip/images/logo.png" /> -->
             </div>
-          </div>
+            <div class="float-right">
+                <span>
+                    English | Deutsch | Espanol | Contact | <a href="#">Logout</a>
+                </span>
+            </div>
         </div>
-      </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h3 class="logo">User Menu</h3>
+                <img src="C:\ZEISS Orals\PagesModified\PagesModified\DashboardImages\userMenu.png" />
+            </div>
+            <div class="col-md-4">
+                <h3 class="logo">My Dashboard</h3>
+                <img src="C:\ZEISS Orals\PagesModified\PagesModified\DashboardImages\MyDashboard.png" />
+            </div>
+            <div class="col-md-5">
+                <h4 class="logo">Newest Documents</h4>
+                <img src="C:\ZEISS Orals\PagesModified\PagesModified\DashboardImages\NewestDoc.png" />
+            </div>
+        </div>
+        <div class="footer">
+            <div align="center" class="logo">
+                <p>User Registration Demo Application developed by</p>
+                <img alt="Infy Logo" src="https://raw.githubusercontent.com/gouthamb/B2CLogin/master/images/infylogo.png" class="infylogo" />
+                <!-- <img alt="Zeiss Logo" class="login-logo" src="http://localhost/wingtip/images/logo.png" /> -->
+            </div>
+        </div>
     </div>
-  </body>
+</body>
 </html>
+<script type="text/javascript">
+    var url = window.location.href;
+    var token = url.split("id_token");
+    document.getElementById("token_value").innerHTML = token(1);
+</script>
